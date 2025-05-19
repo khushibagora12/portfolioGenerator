@@ -206,18 +206,27 @@ import { useState } from "react";
 export default function Dashboard() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   
-  const form = useForm({
-    defaultValues: {
-      fullName: 'John Doe',
-      profession: 'Software Engineer',
-      email: 'abc@xyz.com',
-      contact: '1234567890',
-      about: 'Lorem ipsum dolor sit amet',
-      technicalSkills: ['JavaScript', 'React'],
-      nontechnicalSkills: ['Communication', 'Teamwork'],
-      certificates: { files: [], names: [] }
+const form = useForm({
+  defaultValues: {
+    fullName: 'John Doe',
+  profession: 'Software Engineer',
+  email: 'abc@xyz.com',
+  contact: '1234567890',
+  about: 'Lorem ipsum dolor sit amet',
+  technicalSkills: ['JavaScript', 'React'],
+  nontechnicalSkills: ['Communication', 'Teamwork'],
+  certificates: [
+    {
+      name: 'ssvdb',
+      url: 'https://res.cloudinary.com/.../jexcsk6ruuebhxgkklrz.pdf'
+    },
+    {
+      name: 'dcvscvsmn',
+      url: 'https://res.cloudinary.com/.../pzn8qmbqsjkipquq88la.pdf'
     }
-  });
+  ]
+  }
+});
 
   const onSubmit = async (data:any) => {
     setIsSubmitting(true);

@@ -39,6 +39,12 @@ const userSchema = new mongoose.Schema({
     about: String,
     technicalSkills: [String],
     nontechnicalSkills: [String],
+       certificates: [
+    {
+      name: String,
+      url: String
+    }
+  ]
 })
 
 const Info = mongoose.models.User || mongoose.model("User", userSchema)

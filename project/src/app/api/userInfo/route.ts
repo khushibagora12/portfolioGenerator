@@ -88,15 +88,17 @@ export async function POST(req: Request) {
     console.log("Request body:", body)
 
     try {
-        const savedUser = await Info.create({
-            fullName: body.name,
-            profession: body.profession,
-            email: body.email,
-            contact: body.contact,
-            about: body.about,
-            technicalSkills: body.technicalSkills,
-            nontechnicalSkills: body.nontechnicalSkills,
-        })
+       const savedUser = await Info.create({
+  fullName: body.fullName,
+  profession: body.profession,
+  email: body.email,
+  contact: body.contact,
+  about: body.about,
+  technicalSkills: body.technicalSkills,
+  nontechnicalSkills: body.nontechnicalSkills,
+  certificates: body.certificates
+})
+        console.log("Saved user:", savedUser)
         return NextResponse.json(savedUser, { status: 200 })
     } catch (err) {
         return NextResponse.json({ error: "Failed to save user" }, { status: 500 })
