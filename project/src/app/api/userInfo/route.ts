@@ -94,6 +94,8 @@ export async function POST(req: Request) {
             email: body.email,
             contact: body.contact,
             about: body.about,
+            technicalSkills: body.technicalSkills,
+            nontechnicalSkills: body.nontechnicalSkills,
         })
         return NextResponse.json(savedUser, { status: 200 })
     } catch (err) {

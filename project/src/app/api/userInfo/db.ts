@@ -37,6 +37,8 @@ const userSchema = new mongoose.Schema({
     email: String,
     contact: String,
     about: String,
+    technicalSkills: [String],
+    nontechnicalSkills: [String],
 })
 
 const Info = mongoose.models.User || mongoose.model("User", userSchema)
