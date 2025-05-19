@@ -510,7 +510,7 @@ export default function Alldata() {
                         </div>
                     </div>
                     {/* certificates */}
-                    <div className="min-h-screen">
+                    <div className="min-h-screen mt-10">
                         <div className="m-10 ml-0">
                             <p className="flex text-3xl font-medium" ><Image src={'/certificate.png'} alt="info" height={40} width={40} className="mr-2" />Certificates</p>
                         </div>

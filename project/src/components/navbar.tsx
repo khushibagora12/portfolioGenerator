@@ -30,7 +30,7 @@ export default function Navbar(){
                     </Link>
                 </button>
                 <button className="bg-[#123458] text-white font-bold p-3 rounded-sm w-30 hover:bg-[#1c4a7b] md:w-35">
-                    <Link href="/signup">
+                    <Link href="/auth/signup">
                         Get Started
                     </Link>
                 </button>
