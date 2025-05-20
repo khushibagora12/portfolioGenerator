@@ -10,7 +10,7 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
-import Templates from "./templates"
+import Templates from "./templatescard"
 
 export default function UserResume() {
     return (

@@ -267,6 +267,8 @@ const form = useForm({
         ...data,
         certificates: certificateUrls
       };
+      //zod validation
+      
       await axios.post('/api/userInfo', payload);
       toast.success("Form submitted successfully!");
     } catch (error) {

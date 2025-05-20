@@ -153,7 +153,7 @@ import { Input } from "@/components/ui/input"
 export default function UserInfo({ form }: any) {
     return (
         <>
-         {/* <div className="pl-10">
+         <div className="pl-10">
                 <h1 className={`text-3xl`}>Welcome user</h1>
                  <h2 className={`text-lg text-[#ADA7A7]`}>Date</h2>
             </div>
@@ -161,7 +161,7 @@ export default function UserInfo({ form }: any) {
             <div className="m-10">
                  <p className="flex text-3xl font-medium"><Image src={'/file.png'} alt="info" height={40} width={40} />Info</p>
                  <p className="text-2xl font-medium">Write once, use anywhere</p>
-             </div> */}
+             </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-0">
             <FormField
                 control={form.control}

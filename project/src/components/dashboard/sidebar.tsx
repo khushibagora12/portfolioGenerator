@@ -1,5 +1,5 @@
 'use client'
-import { Home, Settings,FileUser,HandCoins,File,Briefcase,LogOut } from "lucide-react"
+import { Home, Settings,FileUser,HandCoins,File,Briefcase,LogOut,UserCheck,MessageSquareText } from "lucide-react"
  import Image from "next/image"
  import Bebas from "next/font/google"
 import {
@@ -20,6 +20,10 @@ const items = [
     title: "Dashboard",
     url: "/dashboard",
     icon: Home,
+  },  {
+    title: "My Information",
+    url: "/dashboard/myinformation",
+    icon: UserCheck,
   },
   {
     title: "Portfolio",
@@ -42,10 +46,11 @@ const items = [
     icon: HandCoins,
   },
   {
-    title: "Settings",
-    url: "/dashboard/settings",
-    icon: Settings,
+    title: "Feedback",
+    url: "/dashboard/feedback",
+    icon: MessageSquareText,
   },
+
 ]
 export default function AppSidebar() {
   //const pathname = usePathname()
