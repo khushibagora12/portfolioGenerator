@@ -25,12 +25,12 @@ export default function Navbar(){
 
             <div className="flex justify-center items-center gap-4 ml-5 flex-wrap">
                 <button className="bg-[#D4C9BE] text-[#123458] font-bold p-3 rounded-sm w-25 hover:bg-[#ada194] md:w-30">
-                    <Link href="/login">
+                    <Link href="/aht/signin">
                         Login
                     </Link>
                 </button>
                 <button className="bg-[#123458] text-white font-bold p-3 rounded-sm w-30 hover:bg-[#1c4a7b] md:w-35">
-                    <Link href="/signup">
+                    <Link href="/auth/signup">
                         Get Started
                     </Link>
                 </button>

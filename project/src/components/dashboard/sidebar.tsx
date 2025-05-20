@@ -1,6 +1,7 @@
 'use client'
 import { Home, Settings,FileUser,HandCoins,File,Briefcase,LogOut } from "lucide-react"
- 
+ import Image from "next/image"
+ import Bebas from "next/font/google"
 import {
   Sidebar as UISidebar,
   SidebarContent,
@@ -69,9 +70,22 @@ export default function AppSidebar() {
     // </aside>
     <UISidebar >
     <SidebarContent className="bg-[#123458] font--poppins font-semibold text-white" >
+          
       <SidebarGroup>
-        <SidebarGroupLabel>Application</SidebarGroupLabel>
-        <SidebarGroupContent >
+        <SidebarGroupLabel>
+          <div className="flex-shrink-0 ">
+                      <div className="flex gap-4">
+                      <Image
+                      src="/plainLogo.png"
+                      width={60}
+                      height={60}
+                      alt="logo"
+                      />
+                      <h1 className={` text-4xl font-mono font-bold text-[#123458] pt-3 `}>DevSnap</h1>
+                      </div>
+                  </div>
+        </SidebarGroupLabel>
+        <SidebarGroupContent  className="mt-10">
           <SidebarMenu >
             {items.map((item) => (
               <SidebarMenuItem key={item.title} >
