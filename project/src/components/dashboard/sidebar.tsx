@@ -38,7 +38,7 @@ const items = [
   },
   {
     title: "Donate",
-    url: "/dashboard/donate",
+    href: "https://www.buymeacoffee.com/sahildale",
     icon: HandCoins,
   },
   {
@@ -90,7 +90,7 @@ export default function AppSidebar() {
             {items.map((item) => (
               <SidebarMenuItem key={item.title} >
                 <SidebarMenuButton asChild className="hover:bg-[#355C7C] text-white" >
-                  <a href={item.url}>
+                  <a href={item.url || item.href}>
                     <item.icon />
                     <span>{item.title}</span>
                   </a>

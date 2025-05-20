@@ -167,7 +167,7 @@ export default function Certificates({ form }:any) {
           <p className="flex text-3xl font-medium">Certificates</p>
         </div>
         <Form {...form}>
-          <form>
+         
             <div className="w-full md:flex">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 ml-10 w-full">
                 <FormField
@@ -215,7 +215,7 @@ export default function Certificates({ form }:any) {
               </div>
               <Button type="button" onClick={handleAddFile} className="justify-end mt-8 ml-10 md:ml-0">Add</Button>
             </div>
-          </form>
+       
         </Form>
       </div>
       <hr className="text-gray-400 m-10" />

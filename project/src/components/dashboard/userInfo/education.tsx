@@ -64,26 +64,26 @@ const formSchema = z.object({
     })
 });
 
-export default function Education({onDataChange} : {onDataChange : (data : any) => void}){    
-    const form = useForm<z.infer<typeof formSchema>>({
-        resolver: zodResolver(formSchema),
-        defaultValues: {
-            school10 : '',
-            board10 : '',
-            percentage10 : undefined,
-            school12 : '',
-            board12 : '',
-            percentage12 : undefined,
-            college : '',
-            degree : '',
-            cgpa : undefined,
-            starty : undefined,
-            endy : undefined,
-        }
-        });
-        const onSubmit = (data: any) => {
-            console.log("submitted data: ", data);
-        };
+export default function Education({ form }: any){    
+    // const form = useForm<z.infer<typeof formSchema>>({
+    //     resolver: zodResolver(formSchema),
+    //     defaultValues: {
+    //         school10 : '',
+    //         board10 : '',
+    //         percentage10 : undefined,
+    //         school12 : '',
+    //         board12 : '',
+    //         percentage12 : undefined,
+    //         college : '',
+    //         degree : '',
+    //         cgpa : undefined,
+    //         starty : undefined,
+    //         endy : undefined,
+    //     }
+    //     });
+    //     const onSubmit = (data: any) => {
+    //         console.log("submitted data: ", data);
+    //     };
        
     return(
         <>
@@ -92,7 +92,6 @@ export default function Education({onDataChange} : {onDataChange : (data : any) 
                 <p className="flex text-3xl font-medium" ><Image src={'/education.png'} alt="info" height={40} width={40} className="mr-2"/>Education</p>
             </div>
             <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-10 ml-10">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-y-10 gap-x-0">
                         <FormField
                             control={form.control}
@@ -242,7 +241,6 @@ export default function Education({onDataChange} : {onDataChange : (data : any) 
                         />
                     </div>
                     {/* <Button type="submit">Continue</Button> */}
-                </form>
             </Form>
 
         </div>
