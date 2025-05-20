@@ -44,7 +44,18 @@ const userSchema = new mongoose.Schema({
       name: String,
       url: String
     }
-  ]
+  ],
+    school10: String,
+    board10: String,
+    percentage10: Number,
+    school12: String,
+    board12: String,
+    percentage12: Number,
+    college: String,
+    degree: String,
+    cgpa: Number,
+    starty: Number,
+    endy: Number
 })
 
 const Info = mongoose.models.User || mongoose.model("User", userSchema)

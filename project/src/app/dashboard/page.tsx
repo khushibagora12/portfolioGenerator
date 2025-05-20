@@ -202,29 +202,38 @@ import Certificates from "@/components/dashboard/userInfo/certificates";
 import axios from "axios";
 import { FormProvider } from "react-hook-form";
 import { useState } from "react";
-
+import { toast } from "sonner"
+import { Toaster } from "sonner";
+import Education from "@/components/dashboard/userInfo/education";
 export default function Dashboard() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   
 const form = useForm({
   defaultValues: {
-    fullName: 'John Doe',
-  profession: 'Software Engineer',
-  email: 'abc@xyz.com',
-  contact: '1234567890',
-  about: 'Lorem ipsum dolor sit amet',
-  technicalSkills: ['JavaScript', 'React'],
-  nontechnicalSkills: ['Communication', 'Teamwork'],
+    fullName: '',
+  profession: '',
+  email: '',
+  contact: '',
+  about: '',
+  technicalSkills: [],
+  nontechnicalSkills: [],
   certificates: [
     {
-      name: 'ssvdb',
-      url: 'https://res.cloudinary.com/.../jexcsk6ruuebhxgkklrz.pdf'
-    },
-    {
-      name: 'dcvscvsmn',
-      url: 'https://res.cloudinary.com/.../pzn8qmbqsjkipquq88la.pdf'
+      name: '',
+      url: ''
     }
-  ]
+  ],
+  school10: '',
+  board10: '',
+  percentage10:undefined ,
+  school12: '',
+  board12: '',
+  percentage12: undefined,
+  college: '',
+  degree: '',
+  cgpa: undefined,
+  starty: undefined,
+  endy: undefined
   }
 });
 
@@ -254,14 +263,17 @@ const form = useForm({
           }
         }
       }
-      // Now submit the rest of the data along with certificateUrls
       const payload = {
         ...data,
         certificates: certificateUrls
       };
+      //zod validation
+      
       await axios.post('/api/userInfo', payload);
+      toast.success("Form submitted successfully!");
     } catch (error) {
       console.error("Error submitting form:", error);
+      toast.error("Error submitting form");
     } finally {
       setIsSubmitting(false);
     }
@@ -270,10 +282,12 @@ const form = useForm({
   return(
     <div className="h-screen w-[90%] flex justify-center items-center bg-[#F1EFEC]">
       <div className=" rounded-3xl shadow-[0_0_20px_10px_rgba(152,152,152,0.5)] h-[90%] w-[90%] p-10 overflow-y-scroll">
+        <Toaster position="bottom-right"/>
         <FormProvider {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-10 ml-10">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-10 ml-10 flex-col gap-10">
             <UserInfo form={form} />
             <Skills form={form}/>
+            <Education form={form}/>
             <Certificates form={form}/>
             <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded" disabled={isSubmitting}>
               {isSubmitting ? "Submitting..." : "Submit"}

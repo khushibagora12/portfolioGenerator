@@ -96,7 +96,18 @@ export async function POST(req: Request) {
   about: body.about,
   technicalSkills: body.technicalSkills,
   nontechnicalSkills: body.nontechnicalSkills,
-  certificates: body.certificates
+  certificates: body.certificates,
+      school10: body.school10,
+    board10: body.board10,
+    percentage10: body.percentage10,
+    school12: body.school12,
+    board12: body.board12,
+    percentage12: body.percentage12,
+    college: body.college,
+    degree: body.degree,
+    cgpa: body.cgpa,
+    starty: body.starty,
+    endy: body.endy
 })
         console.log("Saved user:", savedUser)
         return NextResponse.json(savedUser, { status: 200 })
